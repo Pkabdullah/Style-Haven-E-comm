@@ -12,9 +12,10 @@ import { useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import LoadingBar from "react-top-loading-bar";
 import Router from "next/router";
+import Loader from "./loadingAnimation";
 
 const Navbar = () => {
-  const { data: session } = useSession();
+  const { data: session ,status} = useSession();
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [navbarBg, setNavbarBg] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -22,7 +23,7 @@ const Navbar = () => {
   const order = useSelector((state) => state.cart.orders);
 console.log("orders",order)
   console.log(session);
-  // Handle screen resize to close the menu on large displays
+ 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {

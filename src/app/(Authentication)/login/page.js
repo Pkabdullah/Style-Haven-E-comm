@@ -47,7 +47,9 @@ export default function Login() {
     }
   };
 
- 
+  if (status === "loading") {
+    return <p>Loading...</p>; // This prevents rendering while session is being fetched
+  }
   if (status === "authenticated") {
     return <VerifiedAnimation title={"User Verified"}/>;
   }

@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
 import { useSession } from "next-auth/react";
 import { clearCart, setCart } from "../features/slice";
+import { useRouter } from "next/navigation";
 
 const CheckOut = () => {
   const checkout = useSelector((state) => state.cart.cart);
@@ -24,7 +25,8 @@ const CheckOut = () => {
   const [zipcode, setZipcode] = useState("");
 
   const { data: session } = useSession();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+  const router= useRouter();
 
   const totalOriginalPrice = checkItem.reduce(
     (acc, item) => acc + item.price,
@@ -83,11 +85,11 @@ const CheckOut = () => {
               sessionId: data.session.id,
             });
     
-            // Handle order and clear cart after redirect
-            await handleOrder();
+         
+            dispatch(clearCart());
           }
         } else if (selectPayment === "cod") {
-          await handleOrder();
+          
         }
       } catch (error) {
         toast.error("Failed to handle payment");
@@ -108,6 +110,11 @@ const CheckOut = () => {
         body: JSON.stringify(orderData),
       });
       toast.success("ORDER PLACE successfully");
+      setTimeout(() => {
+       router.replace("/Order-Tracking")
+      }, 1500);
+
+
       const clearCartItem = await fetch(
         `http://localhost:3000/api/clearItem?userId=${session.user.id}`,
         {
@@ -117,6 +124,7 @@ const CheckOut = () => {
       if (!clearCartItem.ok)
         throw new Error("Failed to clear the cart in the database");
       dispatch(clearCart());
+
     } catch (error) {
       toast.error("Failed to place order");
       console.error("Error placing order:", error);
@@ -318,7 +326,7 @@ const CheckOut = () => {
               <div className="md:col-span-2 text-right">
                 <button
                   onClick={() => {
-                    handlePayment();
+                    handlePayment();handleOrder()
                   }}
                   className="w-full mt-4 bg-blue-700 text-white font-medium py-2 rounded-lg"
                 >

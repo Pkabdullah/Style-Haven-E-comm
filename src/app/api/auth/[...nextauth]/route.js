@@ -33,7 +33,10 @@ export const auth = {
             id: user._id.toString(), // Ensure _id is a string
             name: user.FullName,
             email: user.Email,
+          
           };
+             console.log("usersss",user)
+         
         } catch (error) {
           console.log(error);
           throw new Error("Authentication failed"); // Make sure to throw an error to handle it
@@ -63,7 +66,7 @@ export const auth = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/login",
+    signIn:`/login`,
   },
 };
 
