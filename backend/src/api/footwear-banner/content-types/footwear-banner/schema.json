@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footwear_banners",
+  "info": {
+    "singularName": "footwear-banner",
+    "pluralName": "footwear-banners",
+    "displayName": "FootwearSlider",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

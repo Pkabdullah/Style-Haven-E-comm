@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "categories"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Shirt ",
+        "T-Shirt",
+        "Polo",
+        "Casual Shirt",
+        "Cap",
+        "FootWear",
+        "Jeans",
+        "Kurta",
+        "WaistCoat",
+        "Stitched",
+        "UnStitched",
+        "Wallet",
+        "Belt",
+        "Topi",
+        "TraditionalFootwear",
+        "Shoes",
+        "Sneaker",
+        "Slider"
+      ]
+    }
+  }
+}

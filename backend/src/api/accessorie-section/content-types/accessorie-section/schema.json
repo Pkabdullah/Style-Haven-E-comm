@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accessorie_sections",
+  "info": {
+    "singularName": "accessorie-section",
+    "pluralName": "accessorie-sections",
+    "displayName": "AccessorieSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
+    }
+  }
+}

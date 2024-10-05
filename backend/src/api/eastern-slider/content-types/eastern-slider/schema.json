@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "eastern_sliders",
+  "info": {
+    "singularName": "eastern-slider",
+    "pluralName": "eastern-sliders",
+    "displayName": "EasternSlider"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mensections",
+  "info": {
+    "singularName": "mensection",
+    "pluralName": "mensections",
+    "displayName": "Mensection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
+    }
+  }
+}

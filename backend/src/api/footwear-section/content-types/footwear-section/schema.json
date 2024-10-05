@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footwear_sections",
+  "info": {
+    "singularName": "footwear-section",
+    "pluralName": "footwear-sections",
+    "displayName": "FootwearSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
+    }
+  }
+}

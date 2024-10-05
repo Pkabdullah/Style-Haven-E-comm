@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accessorie_sliders",
+  "info": {
+    "singularName": "accessorie-slider",
+    "pluralName": "accessorie-sliders",
+    "displayName": "AccessorieSlider"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
